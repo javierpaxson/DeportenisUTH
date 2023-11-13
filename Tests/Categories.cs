@@ -9,7 +9,7 @@ using System.Data.Entity.Migrations.Model;
 namespace Tests
 {
     [TestClass]
-    public class Categories
+    public class Categorie
     {
         API.Models.Category model = new API.Models.Category();
         DeportenisEntities entity = new DeportenisEntities();
@@ -19,7 +19,7 @@ namespace Tests
         {
             int result = 0;
             API.Catalogs.Category api = new API.Catalogs.Category();
-            model.Name = "Tenis";
+            model.Name = "Balones";
             
             model.LastCreated = DateTime.Now;
             model.LastUpdated = DateTime.Now;
@@ -37,40 +37,36 @@ namespace Tests
 
 
         }
-        //    [TestMethod]
-        //    public void FindUsers()
-        //    {
-        //        string name = string.Empty;
-        //        string lastName = string.Empty;
+        [TestMethod]
+        public void FindCategories()
+        {
+            string name = string.Empty;
 
-        //        API.Catalogs.Users api = new API.Catalogs.Users();
-        //        model = api.Find(1);
-        //        if(model != null)
-        //        {
-        //            name = model.Name;
-        //            lastName = model.LastName;
-        //        }
-        //        Assert.IsNotNull(model);
-        //    }
-        //    [TestMethod]
-        //    public void UpdateUsers()
-        //    {
-        //        int result = 0;
-        //        API.Catalogs.Users api = new API.Catalogs.Users();
-        //        API.Models.Users model2 = new API.Models.Users();
+            API.Catalogs.Category api = new API.Catalogs.Category();
+            Database.Category model2 = new Database.Category();
+            model2 = api.Find(1);
+            if (model2 != null)
+            {
+                name = model2.Name;
+            }
+            Assert.IsNotNull(model2);
+        }
+        [TestMethod]
+        public void UpdateCategory()
+        {
+            int result = 0;
+            API.Catalogs.Category api = new API.Catalogs.Category();
+            //API.Models.Category model2 = new API.Models.Category();
 
 
-        //        model2.Id = 1;
-        //        model2.Name = "Jesus Paul";
-        //        model2.LastName = "Marin Moreno";
-        //        model2.Email = "jesusmrin29@gmail.com";
-        //        model2.Password = "123456";
-        //        model2.Rol = "admin";
-        //        //model2.LastCreated = DateTime.Now;
-        //        model2.LastUpdated = DateTime.Now;
-        //        result = api.Update(model2);
+            model.Id = 1;
+            model.Name = "Jordan";
+      
+            //model2.LastCreated = DateTime.Now;
+            model.LastUpdated = DateTime.Now;
+            result = api.UpdateCategory(model);
 
-        //        Assert.AreNotEqual(result, -1);
-        //    }
+            Assert.AreNotEqual(result, -1);
+        }
     }
 }
