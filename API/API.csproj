@@ -51,8 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalogs\Category.cs" />
+    <Compile Include="Catalogs\LineOrders.cs" />
+    <Compile Include="Catalogs\Orders.cs" />
     <Compile Include="Catalogs\Products.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\LineOrders.cs" />
+    <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

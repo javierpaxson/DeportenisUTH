@@ -67,7 +67,7 @@ namespace Tests
 
 
             model.Id = 6;
-            model.Name = "Jordan";
+            //model.Name = "Jordan";
             model.CategoryID = 3;
             model.Name = "Futbol";
             model.Description = "Nike";
