@@ -19,7 +19,7 @@ namespace Tests
         {
             int result = 0;
             API.Catalogs.Category api = new API.Catalogs.Category();
-            model.Name = "Balones";
+            model.Name = "Lentes";
             
             model.LastCreated = DateTime.Now;
             model.LastUpdated = DateTime.Now;
