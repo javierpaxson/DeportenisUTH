@@ -18,13 +18,13 @@ namespace DeportenisUTH.Controllers
         public ActionResult Create()
         {
             User model = new User();
-
+            int result = 0;
             API.Catalogs.Users api = new API.Catalogs.Users();
-            model.Name = "name";
-            model.LastName = "asd";
-            model.Email = "email";
-            model.Password = "password";
-            model.Rol = "admin";
+            model.Name = "Javier";
+            model.LastName = "Marin";
+            model.Email = "jh@email.com";
+            model.Password = "12345";
+            model.Rol = "Cliente";
             model.LastCreated = DateTime.Now;
             model.LastUpdated = DateTime.Now;
             result = api.Add(model);
