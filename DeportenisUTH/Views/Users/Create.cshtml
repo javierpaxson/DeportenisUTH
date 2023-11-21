@@ -1,0 +1,169 @@
+﻿
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="row page-titles">
+            <div class="col-md-5 col-8 align-self-center">
+                <h3 class="text-themecolor">Universidad Tecnologica de Hermosillo </h3>
+
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <!-- Row -->
+        <div class="row">
+            <!-- Column -->
+            @*<div class="col-md-6 col-lg-12">*@
+            <div class="col-md-12">
+                <div class="card card-body">
+                    @*<div class="portlet light portlet-fit add-padding-pagination">
+            <div class="portlet-title" style="padding-bottom: 0px;">
+
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="https://cdn.vox-cdn.com/thumbor/SCHYwQY8eqWYGzLZ0rUi50xP7V0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22331126/Pokemon_Legends_Arceus_screenshot_17.jpg" alt="Imagen" />
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>*@                    
+                    <h4 class="card-title">Registro de usuarios</h4>
+                    <h6 class="card-subtitle">Usuarios del sistema y clientes</h6>
+                    <form class="form-horizontal p-t-20">
+                        <div class="form-group row">
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">Nombre*</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <i class="ti-user"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="name" placeholder="Nombre">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">Apellidos*</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <i class="ti-user"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Apellidos">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="exampleInputEmail3" class="col-sm-3 control-label">Email*</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <i class="ti-email"></i>
+                                        </span>
+                                    </div>
+                                    <input type="email" class="form-control" id="email" placeholder="Agregar email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-sm-3">Rol</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <i class="ti-lock"></i>
+                                        </span>
+                                    </div>
+                                    <select class="form-control custom-select">
+                                        <option value="Category 1">Administrador</option>
+                                        <option value="Category 2">Cliente</option>
+                                        <option value="Category 3">Operador</option>
+                                    </select>                               
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword4" class="col-sm-3 control-label">Password*</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <i class="ti-lock"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" class="form-control" id="password" placeholder="Introduzca pwd">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword5" class="col-sm-3 control-label">Confirmar Password*</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <i class="ti-lock"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" class="form-control" id="rePassword" placeholder="Confirmar pwd">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row m-b-0">
+                            <div class="offset-sm-3 col-sm-9">
+                                <button type="submit" class="btn btn-info waves-effect waves-light">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer"> © Marin Moreno Jesus Paul</footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+
+
+</div>
+
+
+
