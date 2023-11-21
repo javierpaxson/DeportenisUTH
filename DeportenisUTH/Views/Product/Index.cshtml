@@ -1,7 +1,117 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div class="page-wrapper">
+    <input type="hidden" id="urlDepartments" name="urlDepartments" value="@Url.Action("getDepartmentsList", "Departments")" />
+    <input type="hidden" id="DepartmentsdEdit" value="@Url.Action("Edit", "Departments")" />
+    <input type="hidden" id="DepartmentsDelete" value="@Url.Action("Delete", "Departments")" />
 
+
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="row page-titles">
+            <div class="col-md-5 col-8 align-self-center">
+                <h3 class="text-themecolor">Productos</h3>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item active"><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
+                </ol>
+            </div>
+            <div class="col-md-7 col-4 align-self-center">
+                <div class="d-flex m-t-10 justify-content-end">
+                    <div class="d-flex m-r-20 m-l-10 hidden-md-down">
+
+                    </div>
+                    <div class="d-flex m-r-20 m-l-10 hidden-md-down">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <!-- Row -->
+        <div class="row">
+            <!-- Column -->
+            <div class="col-md-6 col-lg-12">
+                
+            <div class="col-md-12">
+                <div class="card card-body">
+                    <div class="portlet light portlet-fit add-padding-pagination">
+                        <div class="portlet-title" style="padding-bottom: 0px;">
+                            <div class="caption bold uppercase font-green-seagreen ">
+                                <i class="font-green-seagreen  bold icon-list"></i>
+                                <span class="caption-subject bold">Listado de productos</span>
+                            </div>
+                            <div class="actions" align="right">
+                                <a href="@Url.Action("Create")" class="btn btn-success">
+                                    Nuevo
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="portlet-body" id="container_report">
+                            <table id="data-table-departments" class="table table-striped table-bordered table_list">
+                                <thead>
+                                    <tr>
+                                        <th>Descripción</th>
+                                        <th class="text-right">Última actualización</th>
+                                        <th class="text-right">Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer"> © 2021 Interfases y Sistemas Electrónicos S.A.P.I. de C.V. intertel.mx</footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+
+
+</div>
+<script src="~/Content/assets/js/table-manage-departments.js"></script>
+<script type="text/javascript">$(document).ready(function () {
+
+
+        $('#myTable').DataTable();
+        TableManageDepartmentesDefault.init();
+
+    });
+
+    $('#example23').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });</script>

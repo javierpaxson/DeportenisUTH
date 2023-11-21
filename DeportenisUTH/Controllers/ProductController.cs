@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace DeportenisUTH.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductController : Controller
     {
         // GET: Product
         public ActionResult Index()
