@@ -22,7 +22,7 @@ namespace API.Catalogs
             try
             {
                 dbCategory = this.entity.Categories.Create();
-                dbCategory.Name = model.Name;
+                dbCategory.Name = model.Name.ToUpper();
                 dbCategory.LastCreated = model.LastCreated;
                 dbCategory.LastUpdated = model.LastUpdated;
                 entity.Categories.Add(dbCategory);
