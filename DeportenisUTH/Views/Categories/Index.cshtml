@@ -4,9 +4,9 @@
 }
 
 <div class="page-wrapper">
-    <input type="hidden" id="urlDepartments" name="urlDepartments" value="@Url.Action("getDepartmentsList", "Departments")" />
-    <input type="hidden" id="DepartmentsdEdit" value="@Url.Action("Edit", "Departments")" />
-    <input type="hidden" id="DepartmentsDelete" value="@Url.Action("Delete", "Departments")" />
+    <input type="hidden" id="urlCategories" name="urlCategories" value="@Url.Action("getCategoriesList", "Categories")" />
+    <input type="hidden" id="CategoriesEdit" value="@Url.Action("Edit", "Categories")" />
+    <input type="hidden" id="CategoriesDelete" value="@Url.Action("Delete", "Categories")" />
 
 
     <!-- ============================================================== -->
@@ -65,7 +65,7 @@
 
 
                             <div class="portlet-body" id="container_report">
-                                <table id="data-table-departments" class="table table-striped table-bordered table_list">
+                                <table id="data-table-categories" class="table table-striped table-bordered table_list">
                                     <thead>
                                         <tr>
                                             <th>Descripción</th>
@@ -92,7 +92,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer"> © 2021 Interfases y Sistemas Electrónicos S.A.P.I. de C.V. intertel.mx</footer>
+            <footer class="footer"> © 2023 Universidad tecnologica de hermosillo Marin Moreno Jesus Paul</footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -100,12 +100,12 @@
 
 
     </div>
-    <script src="~/Content/assets/js/table-manage-departments.js"></script>
+    <script src="~/Content/assets/js/table-manage-categories.js"></script>
     <script type="text/javascript">$(document).ready(function () {
 
 
         $('#myTable').DataTable();
-        TableManageDepartmentesDefault.init();
+        TableManageCategoriesDefault.init();
 
     });
 

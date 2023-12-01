@@ -100,5 +100,29 @@ namespace API.Catalogs
 
             return result;
         }
+        public IQueryable<Models.Category> Query()
+        {
+            IQueryable<Models.Category> model = null;
+
+            try
+            {
+                model = from r in entity.Categories
+                        where r.Id >= 0
+                        orderby r.Name ascending
+                        select new Models.Category
+                        {
+                            Id = r.Id,
+                            Name = r.Name,
+                            LastCreated = r.LastCreated,
+                            LastUpdated = r.LastUpdated
+                        };
+            }
+            catch (Exception ex)
+            {
+                //this.Log(ex.ToString(), LogSeverity.Exception);
+            }
+
+            return model;
+        }
     }
 }

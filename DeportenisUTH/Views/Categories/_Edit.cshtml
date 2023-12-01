@@ -33,7 +33,7 @@
                     @using (Ajax.BeginForm("_Edit", null, new AjaxOptions { OnSuccess = "OnSuccess" }, new { @id = "formAdd", @class = "form-horizontal", Autocomplete = "off" }))
                     {
                         @Html.AntiForgeryToken()
-                        @*@Html.HiddenFor(r => r.Id , new { @class = "txtIdentity" })*@
+                        @Html.HiddenFor(r => r.Id , new { @class = "txtIdentity" })
                         <h4 class="card-title">Registro de Categorias</h4>
                         <div class="actions" align="right">
                             <a href="@Url.Action("Index")" class="btn btn-success">
