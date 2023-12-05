@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace DeportenisUTH.Controllers
 {
@@ -87,7 +88,31 @@ namespace DeportenisUTH.Controllers
             model = api.Find(id);
             return View("Index", model);
         }
+        public List<SelectListItem> GetCategories(long categoryIdSelected = 0)
+        {
+            List<SelectListItem> items = new List<SelectListItem>();
+            API.Catalogs.Category api = new API.Catalogs.Category();
+            List<API.Models.Category> query = api.Query().ToList();
+            foreach (var d in query)
+            {
+                items.Add(new SelectListItem()
+                {
+                    Text = d.Name,
+                    Value = d.Id.ToString(),
+                    Selected = categoryIdSelected == 0 ? false : categoryIdSelected == d.Id ? true : false
+                });
+            }
+            return items;
 
+
+        }
+        protected override void Initialize(RequestContext requestContext)
+        {
+
+            base.Initialize(requestContext);
+            ViewBag.CategoriesList = GetCategories();
+
+        }
 
     }
 }
