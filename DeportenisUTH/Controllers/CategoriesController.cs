@@ -98,7 +98,7 @@ namespace DeportenisUTH.Controllers
             Database.Category model2 = new Database.Category();
             
              model  = api.Find(id);
-            return View("_Edit" , model);
+            return View("Index" , model);
         }
     }
 

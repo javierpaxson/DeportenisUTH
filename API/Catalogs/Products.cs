@@ -64,14 +64,17 @@ namespace API.Catalogs
 
             return result;
         }
-        public Database.Product Find(int id)
+        public Models.Products Find(int id)
         {
+            Models.Products model = null;
+
             try
             {
-                var resultProducts = entity.Products.Find(id);
-                if (resultProducts != null)
+                this.dbProduct  = entity.Products.Find(id);
+                if (this.dbProduct != null)
                 {
-                    return resultProducts;
+                    model = GetEntityModel();
+                    return model;
                 }
             }
             catch (Exception ex)
@@ -114,6 +117,41 @@ namespace API.Catalogs
             }
 
             return result;
+        }
+        public IQueryable<Models.Products> Query()
+        {
+            IQueryable<Models.Products> model = null;
+
+            try
+            {
+                model = from r in entity.Products
+                        where r.Id >= 0
+                        orderby r.Name ascending
+                        select new Models.Products
+                        {
+                            Id = r.Id,
+                            Name = r.Name,
+                            LastCreated = r.LastCreated,
+                            LastUpdated = r.LastUpdated
+                        };
+            }
+            catch (Exception ex)
+            {
+                //this.Log(ex.ToString(), LogSeverity.Exception);
+            }
+
+            return model;
+        }
+        Models.Products GetEntityModel()
+        {
+            Models.Products model = new Models.Products()
+            {
+                Id = this.dbProduct.Id,
+                Name = this.dbProduct.Name,
+                LastCreated = this.dbProduct.LastCreated,
+                LastUpdated = this.dbProduct.LastUpdated
+            };
+            return model;
         }
     }
 }
