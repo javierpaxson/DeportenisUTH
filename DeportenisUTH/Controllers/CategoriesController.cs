@@ -26,14 +26,24 @@ namespace DeportenisUTH.Controllers
         {
             return View();
         }
-        public ActionResult _Edit(API.Models.Category model)
+        public ActionResult _Edit(API.Models.Category model)    
         {
             API.Catalogs.Category api = new API.Catalogs.Category();           
             int result = 0;
             model.LastUpdated = DateTime.Now;
             model.LastCreated = DateTime.Now;
-            result = api.Add(model);
-            return View();
+            if(model.Id == 0)
+            {
+                result = api.Add(model);
+            }
+            else
+            {
+                result = api.UpdateCategory(model);
+            }
+            return View("Index");
+
+
+
         }
         public ActionResult Create()
         {
@@ -75,5 +85,23 @@ namespace DeportenisUTH.Controllers
 
             return new ContentResult { Content = sResult, ContentType = "application/json" };
         }
+        public ActionResult Delete(int id)
+        {
+            API.Catalogs.Category api = new API.Catalogs.Category();
+            api.Delete(id);
+            return View("Index");
+        }
+        public ActionResult Edit(int id)
+        {
+            API.Catalogs.Category api = new API.Catalogs.Category();
+            API.Models.Category model = new API.Models.Category();
+            Database.Category model2 = new Database.Category();
+            
+             model  = api.Find(id);
+            return View("_Edit" , model);
+        }
     }
+
+
+
 }

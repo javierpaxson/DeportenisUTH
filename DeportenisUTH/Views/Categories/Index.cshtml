@@ -2,6 +2,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Content/assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
+
 
 <div class="page-wrapper">
     <input type="hidden" id="urlCategories" name="urlCategories" value="@Url.Action("getCategoriesList", "Categories")" />
@@ -100,18 +102,45 @@
 
 
     </div>
+
+
+    @*<script src="~/Content/assets/js/table-manage-categories.js"></script>
+        <script src="../../Content/assets/plugins/jquery/jquery.min.js"></script>
+        <script src="../../Content/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+
+                $('#myTable').DataTable();
+                TableManageCategoriesDefault.init();
+
+            });
+
+                //$('#example23').DataTable({
+                //    dom: 'Bfrtip',
+                //    buttons: [
+                //        'copy', 'csv', 'excel', 'pdf', 'print'
+                //    ]
+                //});
+        </script>*@
     <script src="~/Content/assets/js/table-manage-categories.js"></script>
-    <script type="text/javascript">$(document).ready(function () {
+    <script src="../../Content/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="../../Content/assets/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../Content/assets/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
+    <script src="../../Content/assets/plugins/datatables/jquery.dataTables.min.js"></script>
 
 
-        $('#myTable').DataTable();
-        TableManageCategoriesDefault.init();
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+            TableManageCategoriesDefault.init();
+        });
 
-    });
-
-    $('#example23').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    });</script>
+        $('#example23').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
+    </script>

@@ -56,14 +56,18 @@ namespace API.Catalogs
 
             return result;
         }
-        public Database.Category Find(int id)
+        public Models.Category Find(int id)
         {
+            Models.Category model = null;
             try
             {
-                var resultCategories = entity.Categories.Find(id);
-                if (resultCategories != null)
+                //var resultCategories = entity.Categories.Find(id);
+                this.dbCategory  = entity.Categories.Find(id);
+
+                if (this.dbCategory != null)
                 {
-                    return resultCategories;
+                    model = GetEntityModel();
+                    return model;
                 }
             }
             catch (Exception ex)
@@ -122,6 +126,17 @@ namespace API.Catalogs
                 //this.Log(ex.ToString(), LogSeverity.Exception);
             }
 
+            return model;
+        }
+        Models.Category GetEntityModel()
+        {
+            Models.Category model = new Models.Category()
+            {
+                Id = this.dbCategory.Id,
+                Name = this.dbCategory.Name,
+                LastCreated = this.dbCategory.LastCreated,
+                LastUpdated = this.dbCategory.LastUpdated
+            };
             return model;
         }
     }

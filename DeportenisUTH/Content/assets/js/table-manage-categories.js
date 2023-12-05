@@ -29,7 +29,7 @@
                     "className": 'text-right',
                     "data": null,
                     "mRender": function (data, type, full) {
-                        var date = new Date(data.LastUpdate).toISOString().slice(0, 10);
+                        var date = new Date(data.LastUpdated).toISOString().slice(0, 10);
                         /// return moment(date).format('DD MMMM YYYY, h:mm a');
                         return date;
                     }
@@ -61,13 +61,17 @@
         /Funcion para los botones de accion/
 
         $('#data-table-categories tbody').on('click', '.editBrand', function () {
+            ///alert("clic al boton editar:");
+
             var data = table.row($(this).parents('tr')).data();
-            window.location.href = $("#CategoriesEdit").val() + "?Id=" + data.Id;
+            window.location.href = $("#CategoriesEdit").val() + "?id=" + data.Id;
 
         });
 
         $('#data-table-categories tbody').on('click', '.delBrand', function () {
             var data = table.row($(this).parents('tr')).data();
+           // alert(data.Name);
+
             swal(
                 {
                     title: 'Quiere elimina este registro?',
@@ -79,7 +83,7 @@
                     confirmButtonText: 'Sí',
                     cancelButtonText: 'No'
                 }, function () {
-                    window.location.href = $("#CategoriesDelete").val() + "?Id=" + data.Id;
+                    window.location.href = $("#CategoriesDelete").val() + "?id=" + data.Id;
                 }
             );
 
@@ -94,12 +98,12 @@
 };
 
 
-$(document).on("click", ".btnExport", function () {
-    $(".dataTableExcel").click();
-});
+//$(document).on("click", ".btnExport", function () {
+//    $(".dataTableExcel").click();
+//});
 
 
-var TableManageDepartmentesDefault = function () {
+var TableManageCategoriesDefault = function () {
     "use strict";
     return {
         //main function
