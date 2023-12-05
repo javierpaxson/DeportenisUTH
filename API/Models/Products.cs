@@ -15,7 +15,7 @@ namespace API.Models
         public Nullable<decimal> Price { get; set; }
         public Nullable<int> Stock { get; set; }
         public Nullable<decimal> SaleOff { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public System.DateTime Date { get; set; }
         public string Image { get; set; }
         public Nullable<System.DateTime> LastCreated { get; set; }
         public Nullable<System.DateTime> LastUpdated { get; set; }

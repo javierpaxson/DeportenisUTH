@@ -154,9 +154,9 @@
                                 <label class="control-label col-sm-3">Fecha</label>
                                 <div class="col-sm-9">
                                     @{
-                                        @Html.HiddenFor(r => r.Date, new { @id = "txtDate" })
+                                        @Html.HiddenFor(r => r.Date, new { @id = "txtAdmissionDate" })
+                                        string parameterValue = Model.Date.ToString("yyyy-MM-dd").Substring(0, 10);
 
-                                        string parameterValue = (Model.Date.ToString() ?? "").ToString("yyyy-MM-dd").Substring(0, 10);
                                         <input type="date" class="form-control" placeholder="dd/mm/yyyy" id="AdmissionDateAUX" value=@parameterValue>
                                         @*@Html.TextBoxFor(r => parameterValue, new { type = "date", @class = "form-control",@id = "AdmissionDate" })*@
                                     }
@@ -201,8 +201,16 @@
     <!-- ============================================================== -->
     <!-- End footer -->
     <!-- ============================================================== -->
+    
 </div>
+<script>
 
+    $("#AdmissionDateAUX").change(function () {
+        alert("HASDAS");
+
+        $('#txtAdmissionDate').val($('#AdmissionDateAUX').val());
+    });
+</script>
 
 
 
