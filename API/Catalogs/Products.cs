@@ -130,7 +130,13 @@ namespace API.Catalogs
                         select new Models.Products
                         {
                             Id = r.Id,
+                            CategoryID = r.CategoryID,
                             Name = r.Name,
+                            Description = r.Description,
+                            Price = r.Price,
+                            Stock = r.Stock,
+                            Date = r.Date,
+                            Image = r.Image,
                             LastCreated = r.LastCreated,
                             LastUpdated = r.LastUpdated
                         };

@@ -53,7 +53,7 @@ namespace DeportenisUTH.Controllers
 
 
             // Obtener el total de registros(recordsTotal) para indicarlos en el grid /
-            objDTNetManage.recordsTotal = queryBrands.Count();
+             objDTNetManage.recordsTotal = queryBrands.Count();
 
             // Filtro por si hay busqueda general /
             if (objDTNetManage.searchVal != "")

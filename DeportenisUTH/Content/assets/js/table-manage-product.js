@@ -1,7 +1,7 @@
 ﻿var handleDataTableDefault = function () {
     "use strict";
 
-    if ($('#data-table-categories').length !== 0) {
+    if ($('#data-table-product').length !== 0) {
 
         /Inicializar la tabla de marcas/
         var table = $('#data-table-product').DataTable({
@@ -23,6 +23,20 @@
                     "data": null,
                     "mRender": function (data, type, full) {
                         return '<a class="editBrand" style="color:#659be0 !important;" href="#">' + data.Name + '</a>';
+                    }
+                },
+                 {
+                    "className": 'text-left',
+                    "data": null,
+                    "mRender": function (data, type, full) {
+                        return '<a class="editBrand" style="color:#659be0 !important;" href="#">' + data.Description + '</a>';
+                    }
+                },
+                 {
+                    "className": 'text-left',
+                    "data": null,
+                    "mRender": function (data, type, full) {
+                        return '<a class="editBrand" style="color:#659be0 !important;" href="#">' + data.Price + '</a>';
                     }
                 },
                 {
@@ -102,7 +116,7 @@
 //    $(".dataTableExcel").click();
 //});
 
-
+    
 var TableManageProductDefault = function () {
     "use strict";
     return {
