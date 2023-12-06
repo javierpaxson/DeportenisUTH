@@ -86,7 +86,7 @@ namespace DeportenisUTH.Controllers
             Database.Product model2 = new Database.Product();
 
             model = api.Find(id);
-            return View("Index", model);
+            return View("_Edit", model);
         }
         public List<SelectListItem> GetCategories(long categoryIdSelected = 0)
         {

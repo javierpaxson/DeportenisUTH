@@ -153,7 +153,13 @@ namespace API.Catalogs
             Models.Products model = new Models.Products()
             {
                 Id = this.dbProduct.Id,
+                CategoryID = this.dbProduct.CategoryID,
                 Name = this.dbProduct.Name,
+                Description = this.dbProduct.Description,
+                Price = this.dbProduct.Price,
+                Stock = this.dbProduct.Stock,
+                Date = this.dbProduct.Date,
+                Image = this.dbProduct.Image,
                 LastCreated = this.dbProduct.LastCreated,
                 LastUpdated = this.dbProduct.LastUpdated
             };
